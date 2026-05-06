@@ -1,0 +1,18 @@
+<h2>Students</h2>
+
+<a routerLink="/students/add">Add Student</a>
+
+<table border="1">
+<tr>
+  <th>Name</th>
+  <th>Action</th>
+</tr>
+
+<tr *ngFor="let s of students">
+  <td>{{s.name}}</td>
+  <td>
+    <a [routerLink]="['/students/edit', s.id]">Edit</a>
+    <button (click)="delete(s.id)">Delete</button>
+  </td>
+</tr>
+</table>
